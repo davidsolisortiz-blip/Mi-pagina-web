@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Godzilla</title>
+    <style>
+        /* Estilo general inspirado en Godzilla (Oscuro y azul Radiactivo) */
+        body {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            background-color: #0b0f0d; /* Fondo negro celeste oscuro */
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Tarjeta principal con borde azul neón */
+        .card {
+            background-color: #121a15;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+            border: 2px solid #00ff66;
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #00ff66; /* azul radiactivo */
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.7);
+            text-transform: uppercase;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            color: #88aa99;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0 15px 0;
+            border: 1px solid #005522;
+            border-radius: 6px;
+            background-color: #050806;
+            color: #00ff66;
+            font-size: 1.2rem;
+            font-family: monospace;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00ff66;
+            box-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+        }
+
+        /* Botón estilo 'Ataque Radiactivo' */
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #00ff66;
+            color: #050806;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 100, 0.4);
+        }
+
+        button:hover {
+            background-color: #33ff88;
+            box-shadow: 0 0 25px rgba(0, 255, 100, 0.8);
+            transform: scale(1.02);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #resultado {
+            font-size: 1.3rem;
+            color: #00ff66;
+            margin-top: 20px;
+            margin-bottom: 0;
+            min-height: 24px;
+            text-shadow: 0 0 8px rgba(0, 255, 100, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>🦖 Suma Gojira-san</h2>
+        
+        <label for="numero1">PODER 1:</label>
+        <input type="number" id="numero1" placeholder="Ej. 500">
+
+        <label for="numero2">PODER 2:</label>
+        <input type="number" id="numero2" placeholder="Ej. 300">
+
+        <!-- Botón personalizado con temática -->
+        <button onclick="sumar()">💥 EXPULSAR ALIENTO ATÓMICO</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script type="text/javascript">
+        function sumar() {
+            let num1 = parseFloat(document.getElementById('numero1').value);
+            let num2 = parseFloat(document.getElementById('numero2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('resultado').textContent = "⚠️ INGRESA AMBOS VALORES";
+                return;
+            }
+
+            let suma = num1 + num2;
+            document.getElementById('resultado').textContent = "PODER TOTAL = " + suma;
+        }
+    </script>
+
+</body>
+</html>
